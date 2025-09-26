@@ -1,0 +1,11 @@
+// built in method- fs method
+const fs = require('fs');
+
+// new file create / write / override
+fs.writeFile('demo1.txt', 'My Name is Debajit Roy', function(err){
+    if(err){
+        console.log(err)
+    }else{
+        console.log('successful')
+    }
+} )
