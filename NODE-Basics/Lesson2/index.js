@@ -20,17 +20,26 @@ const fs = require('fs');
 // })
 
 // read a file - utf-8 encoding system should apply to read data.
-fs.readFile('demo1.txt', 'utf-8', (err, data) =>{
-    if(err){
-        console.log(err)
-    }else{
-        console.log(data)
-    }
-})
+// fs.readFile('demo1.txt', 'utf-8', (err, data) =>{
+//     if(err){
+//         console.log(err)
+//     }else{
+//         console.log(data)
+//     }
+// })
 
 
 // rename a file
-fs.rename('demo1.txt', 'demo2.txt', (err) =>{
+// fs.rename('demo1.txt', 'demo2.txt', (err) =>{
+//     if(err){
+//         console.log(err)
+//     }else{
+//         console.log('successful')
+//     }
+// })
+
+// delete a file
+fs.unlink('demo2.txt', (err) =>{
     if(err){
         console.log(err)
     }else{
