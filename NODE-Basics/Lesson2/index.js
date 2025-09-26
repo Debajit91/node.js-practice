@@ -27,3 +27,13 @@ fs.readFile('demo1.txt', 'utf-8', (err, data) =>{
         console.log(data)
     }
 })
+
+
+// rename a file
+fs.rename('demo1.txt', 'demo2.txt', (err) =>{
+    if(err){
+        console.log(err)
+    }else{
+        console.log('successful')
+    }
+})
