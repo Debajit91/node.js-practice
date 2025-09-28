@@ -1,9 +1,10 @@
 const http = require('http');
+const port = 3000;
 
 const myServer = http.createServer((req, res)=>{
     res.end("Hello. This is the myServer");
 });
 
-myServer.listen(3000, ()=>{
-    console.log("My Server is running Successfully at localhost:3000");
+myServer.listen(port, ()=>{
+    console.log("My Server is running Successfully at port", port);
 });
