@@ -2,7 +2,8 @@ const http = require('http');
 const PORT = 3000;
 
 const app = http.createServer((req, res) =>{
-    res.end("Welcome to the server");
+    console.log(req.url);
+    res.end("Welcome to my server");
 })
 
 app.listen(PORT, ()=>{
