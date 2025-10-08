@@ -3,30 +3,22 @@ const fs = require('fs');
 const PORT = 3000;
 
 const app = http.createServer((req, res) =>{
+    const handleReadFile = (statusCode, fileLocation) =>{
+        fs.readFile(fileLocation, (err, data)=>{
+            res.writeHead(statusCode, {"content-type":"text/html"});
+            res.write(data);
+            res.end();
+        })
+    }
+
     if(req.url === '/'){
-        fs.readFile('index.html', (err, data)=>{
-            res.writeHead(200, {"content-type":"text/html"});
-            res.write(data);
-            res.end();
-        })
+        handleReadFile(200, 'index.html');
     } else if(req.url === '/about'){
-        fs.readFile('about.html', (err, data)=>{
-            res.writeHead(200, {"content-type":"text/html"});
-            res.write(data);
-            res.end();
-        })
+        handleReadFile(200, 'about.html');
     } else if(req.url === '/contact'){
-        fs.readFile('contact.html', (err, data)=>{
-            res.writeHead(200, {"content-type":"text/html"});
-            res.write(data);
-            res.end();
-        })
+        handleReadFile(200, 'contact.html');
     } else {
-        fs.readFile('error.html', (err, data)=>{
-            res.writeHead(404, {"content-type":"text/html"});
-            res.write(data);
-            res.end();
-        })
+       handleReadFile(404, 'error.html')
     }
 })
 
